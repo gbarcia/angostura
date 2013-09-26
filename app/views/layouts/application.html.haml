@@ -1,12 +1,38 @@
 !!!
-%html
+%html{lang: "en"}
   %head
-  %title="Angostura"
-  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-  = javascript_include_tag "application", "data-turbolinks-track" => true
-  = csrf_meta_tags
-  <!--[if lt IE 7]>
-  %script{ src: "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"}
-  <![endif]-->
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %link{href: "../../assets/ico/favicon.png", rel: "shortcut icon"}/
+    %title Angostura
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    / Custom styles for this template
+    %link{href: "starter-template.css", rel: "stylesheet"}/
+    <!--[if lt IE 7]>
+    %script{ src: "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"}
+    <![endif]-->
   %body
-    = yield
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "#"} Angostura
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{href: "#"} Inicio
+            %li
+              %a{href: "#about"} About
+            %li
+              %a{href: "#contact"} Contact
+        / /.nav-collapse
+    .container
+      = yield
+    %footer
