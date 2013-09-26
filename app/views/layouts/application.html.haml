@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+  %title="Angostura"
+  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+  = javascript_include_tag "application", "data-turbolinks-track" => true
+  = csrf_meta_tags
+  <!--[if lt IE 7]>
+  %script{ src: "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"}
+  <![endif]-->
+  %body
+    = yield
